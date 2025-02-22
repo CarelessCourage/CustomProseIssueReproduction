@@ -1,75 +1,27 @@
-# Nuxt Content Starter
+# Custom Prose Breaks in the MDC component
 
-Look at the [Nuxt Content documentation](https://content.nuxt.com) to learn more.
+When I create my own prose components they work fine if I use a markdown file  and the regular ContentRenderer in nuxt content, but if I store the markdown in a variable and insert it into the MDC component - not only does my custom not show up the default prose component breaks. It seems MDC will literally render a <ProseH1> element into the browsers HTML instead of a <h1> element in this case. 
 
-## Setup
+I have made a reproduction and tried to keep it as simple and clear as possible: 
 
-Make sure to install dependencies:
+```vue
+<script setup lang="ts">
+const route = useRoute()
 
-```bash
-# npm
-npm install
+const { data: page } = await useAsyncData('page-' + route.path, () => {
+  return queryCollection('content').path(route.path).first()
+})
 
-# pnpm
-pnpm install
+const md = `
+# This should be an h1 element and it should have the "custom prose" prefix from the custom ProseH1 component but its a proseh1 element and it lacks the custom prose text
+`
+</script>
 
-# yarn
-yarn install
+<template>
+  <!-- Works as expected -->
+  <ContentRenderer v-if="page":value="page" />
 
-# bun
-bun install
+  <!-- Does not work as expected -->
+  <MDC :value="md" tag="article" />
+</template>
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
