@@ -29,3 +29,5 @@ const md = `
   <MDC :value="md" tag="article" />
 </template>
 ```
+<img width="812" alt="Screenshot 2025-02-22 at 15 41 47" src="https://github.com/user-attachments/assets/2f7ed082-d428-40c2-94d8-efeeebb3940e" />
+<img width="1221" alt="Screenshot 2025-02-22 at 15 44 47" src="https://github.com/user-attachments/assets/85a2e4e4-9264-41a9-8329-84ba17c8590c" />
