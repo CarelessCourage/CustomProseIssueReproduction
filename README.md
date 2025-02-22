@@ -1,6 +1,6 @@
 # Custom Prose Breaks in the MDC component
 
-When I create my own prose components they work fine if I use a markdown file  and the regular ContentRenderer in nuxt content, but if I store the markdown in a variable and insert it into the MDC component - not only does my custom not show up the default prose component breaks. It seems MDC will literally render a ProseH1 element into the browsers HTML instead of a h1 element in this case. 
+When I create my own prose components they work fine if I use a markdown file  and the regular ContentRenderer in nuxt content, but if I store the markdown in a variable and insert it into the MDC component - not only does my custom prose components not show up, the default prose component breaks. It seems MDC will literally render a ProseH1 element into the browsers HTML instead of a h1 element in this case. 
 
 I have made a reproduction and tried to keep it as simple and clear as possible. 
 
