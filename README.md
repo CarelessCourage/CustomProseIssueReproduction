@@ -4,6 +4,8 @@ When I create my own prose components they work fine if I use a markdown file  a
 
 I have made a reproduction and tried to keep it as simple and clear as possible. 
 
+Reproduction: [CustomProseIssueReproduction](https://github.com/CarelessCourage/CustomProseIssueReproduction/tree/content)
+
 <img width="231" alt="Screenshot 2025-02-22 at 15 17 01" src="https://github.com/user-attachments/assets/84b53e2b-e97d-478a-96d5-d22dfb5b8584" />
 
 ```vue
